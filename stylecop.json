@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "layoutRules": {
+      "newlineAtEndOfFile": "require",
+      "allowConsecutiveUsings": false,
+      "newlineBetweenMethods": "require"
+    },
+    "documentationRules": {
+      "excludeFromInheritanceDocs": ["Migrations/*"]
+    },
+    "orderingRules": {
+      "usingDirectivesPlacement": "outsideNamespace"
+    }
+  }
+}
