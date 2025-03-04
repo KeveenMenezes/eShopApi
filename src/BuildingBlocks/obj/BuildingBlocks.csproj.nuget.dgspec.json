@@ -13,10 +13,13 @@
         "packagesPath": "C:\\Users\\00968579\\.nuget\\packages\\",
         "outputPath": "C:\\Projetos\\Estudos\\eShopApi\\src\\BuildingBlocks\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "CentralPackageTransitivePinningEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+          "C:\\Projetos\\Estudos\\eShopApi\\NuGet.Config",
           "C:\\Users\\00968579\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -25,11 +28,8 @@
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/DrogariaAraujo/_packaging/CP.NET/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/DrogariaAraujo/_packaging/CV.NET/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -52,6 +52,43 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Carter": "9.0.0",
+            "FluentValidation": "11.11.0",
+            "FluentValidation.AspNetCore": "11.3.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.11.0",
+            "Mapster": "7.4.0",
+            "Marten": "7.37.1",
+            "MediatR": "12.4.1",
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.5"
+          },
           "imports": [
             "net461",
             "net462",
