@@ -48,9 +48,9 @@
             "command": "docker-compose",
             "args": [
                 "-f",
-                "${workspaceFolder}/src/docker-compose.yml",
+                "src/docker-compose.yml",
                 "-f",
-                "${workspaceFolder}/src/docker-compose.override.yml",
+                "src/docker-compose.override.yml",
                 "up",
                 "-d",
                 "--build"
@@ -62,9 +62,9 @@
             "command": "docker-compose",
             "args": [
                 "-f",
-                "${workspaceFolder}/src/docker-compose.yml",
+                "src/docker-compose.yml",
                 "-f",
-                "${workspaceFolder}/src/docker-compose.override.yml",
+                "src/docker-compose.override.yml",
                 "down"
             ],
             "problemMatcher": []
