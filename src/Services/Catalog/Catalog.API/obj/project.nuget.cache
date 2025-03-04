@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HLmgqHEMm58=",
+  "dgSpecHash": "2KEo9ZWXhLo=",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+  "projectFilePath": "c:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\00968579\\.nuget\\packages\\carter\\9.0.0\\carter.9.0.0.nupkg.sha512",
     "C:\\Users\\00968579\\.nuget\\packages\\carter.analyzers\\9.0.0\\carter.analyzers.9.0.0.nupkg.sha512",

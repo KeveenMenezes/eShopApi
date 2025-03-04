@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker Compose",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build and docker-compose up",
+      "postDebugTask": "docker-compose down",
+      "program": "${workspaceFolder}/src/Services/Catalog/Catalog.API/bin/Debug/net9.0/Catalog.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Services/Catalog/Catalog.API",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "C#: Catalog.API [https]",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj",
+      "launchConfigurationId": "TargetFramework=;https"
+    }
+  ]
+}

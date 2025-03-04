@@ -1,6 +1,39 @@
-@Catalog.API_HostAddress = http://localhost:5010
+@Catalog = https://localhost:5050
 
-GET {{Catalog.API_HostAddress}}/weatherforecast/
+### Create a new product
+POST {{Catalog}}/products
+Content-Type: application/json
+
+{
+    "name": "Teste 2",
+    "description": "Product Description",
+    "imageFile": "image.jpg",
+    "price": 99.99,
+    "categories": ["A1", "C2", "A4"]
+}
+
+### Get all products
+GET {{Catalog}}/products
 Accept: application/json
 
-###
+### Get product by id
+GET {{Catalog}}/products/b5de0839-2ca2-4206-910d-f3fb319f9555
+
+### Get product by category
+GET {{Catalog}}/products/category/A2
+
+### Update product
+PUT {{Catalog}}/products
+Content-Type: application/json
+
+{
+    "id": "b5de0839-2ca2-4206-910d-f3fb319f9555",
+    "name": "Teste 2",
+    "description": "Product Description",
+    "imageFile": "image.jpg",
+    "price": 101,
+    "categories": ["A1", "C2", "A2"]
+}
+
+### Delete product
+DELETE {{Catalog}}/products/e1549a96-3bc8-43ea-88be-7c98da4aa189

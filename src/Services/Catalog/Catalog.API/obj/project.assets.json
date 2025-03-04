@@ -4251,11 +4251,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+      "projectUniqueName": "c:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
       "projectName": "Catalog.API",
-      "projectPath": "C:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
+      "projectPath": "c:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\Catalog.API.csproj",
       "packagesPath": "C:\\Users\\00968579\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\obj\\",
+      "outputPath": "c:\\Projetos\\Estudos\\eShopApi\\src\\Services\\Catalog\\Catalog.API\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "CentralPackageTransitivePinningEnabled": true,
@@ -4263,7 +4263,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Projetos\\Estudos\\eShopApi\\NuGet.Config",
+        "c:\\Projetos\\Estudos\\eShopApi\\src\\NuGet.Config",
         "C:\\Users\\00968579\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -4279,8 +4279,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Projetos\\Estudos\\eShopApi\\src\\BuildingBlocks\\BuildingBlocks.csproj": {
-              "projectPath": "C:\\Projetos\\Estudos\\eShopApi\\src\\BuildingBlocks\\BuildingBlocks.csproj"
+            "c:\\Projetos\\Estudos\\eShopApi\\src\\BuildingBlocks\\BuildingBlocks.csproj": {
+              "projectPath": "c:\\Projetos\\Estudos\\eShopApi\\src\\BuildingBlocks\\BuildingBlocks.csproj"
             }
           }
         }
