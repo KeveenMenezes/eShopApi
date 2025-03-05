@@ -1,17 +1,30 @@
 namespace Catalog.API.Products.GetProducts;
 
-public record GetProductsQuery() : IQuery<GetProductsResult>;
+public record GetProductsQuery(
+    int PageIndex,
+    int PageSize)
+    : IQuery<GetProductsResult>;
 
-public record GetProductsResult(IEnumerable<Product> Products);
+public record GetProductsResult(Pagination<Product> ProductPagination);
 
-internal class GetProductsQueryHandler(
-    IDocumentSession session
-    ) : IQueryHandler<GetProductsQuery, GetProductsResult>
+internal class GetProductsQueryHandler(IDocumentSession session)
+    : IQueryHandler<GetProductsQuery, GetProductsResult>
 {
     public async Task<GetProductsResult> Handle(GetProductsQuery request, CancellationToken cancellationToken)
     {
-        var products = await session.Query<Product>().ToListAsync(cancellationToken);
+        var pagination = new Pagination<Product>(
+            request.PageSize,
+            await session.Query<Product>().CountAsync(cancellationToken)
+        )
+        {
+            pageIndex = request.PageIndex
+        };
 
-        return new GetProductsResult(products);
+        pagination.items = await session.Query<Product>()
+            .Skip(pagination.pageSize * (pagination.pageIndex - 1))
+            .Take(pagination.pageSize)
+            .ToListAsync(cancellationToken);
+
+        return new GetProductsResult(pagination);
     }
 }

@@ -1,4 +1,4 @@
-@Catalog = https://localhost:5050
+@Catalog = https://localhost:5050/api
 
 ### Create a new product
 POST {{Catalog}}/products

@@ -6,7 +6,8 @@ public record UpdateProductCommand(
     string Description,
     string ImageFile,
     decimal Price,
-    List<string> Categories) : ICommand<UpdateProductResult>;
+    List<string> Categories) 
+    : ICommand<UpdateProductResult>;
 
 public record UpdateProductResult(Guid Id);
 

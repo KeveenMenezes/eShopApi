@@ -9,7 +9,7 @@ public class CustomExceptionHandler
     (ILogger<CustomExceptionHandler> logger)
     : IExceptionHandler
 {
-    public async ValueTask<bool> TryHandleAsync(HttpContext context, Exception exception, CancellationToken cancellationToken)
+    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
         logger.LogError(
             "Error Message: {exceptionMessage}, Time of occurrence {time}",
@@ -54,19 +54,19 @@ public class CustomExceptionHandler
             Title = Title,
             Detail = Detail,
             Status = StatusCode,
-            Instance = context.Request.Path
+            Instance = httpContext.Request.Path
         };
 
-        problemDetails.Extensions.Add("traceId", context.TraceIdentifier);
+        problemDetails.Extensions.Add("traceId", httpContext.TraceIdentifier);
 
         if (exception is ValidationException validationException)
         {
             problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
         }
 
-        context.Response.StatusCode = StatusCode;
+        httpContext.Response.StatusCode = StatusCode;
 
-        await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
+        await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
         return true;
     }
 }

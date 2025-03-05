@@ -4,7 +4,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 var assembly = typeof(Program).Assembly;
+
 builder.Services
+    .AddCors(options =>
+    {
+        options.AddPolicy("AllowAngularApp",
+            policy =>
+            {
+                policy.WithOrigins("https://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+    })
     .AddExceptionHandler<CustomExceptionHandler>()
     .AddCarter()
     .AddMediatR(config =>
@@ -23,8 +34,9 @@ builder.Services
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 
+app.UsePathBase("/api");
+app.UseCors("AllowAngularApp");
 app.MapCarter();
-
 app.UseExceptionHandler(options => { });
 
 await app.RunAsync();

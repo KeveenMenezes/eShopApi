@@ -1,22 +1,30 @@
 namespace Catalog.API.Products.GetProducts;
 
-public record GetProductsResponse(IEnumerable<Product> Products);
+public record GetPagitationProductsResponse(
+    Pagination<Product> ProductPagination);
 
 public class GetProductsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/products", async (ISender sender, CancellationToken cancellationToken) =>
+        app.MapGet(
+            "/products/{pageIndex}/{pageSize}",
+            async (
+                int pageIndex,
+                int pageSize,
+                ISender sender,
+                CancellationToken cancellationToken) =>
         {
-            var result = await sender.Send(new GetProductsQuery(), cancellationToken);
+            var query = new GetProductsQuery(pageIndex, pageSize);
 
-            var response = result.Adapt<GetProductsResponse>();
+            var result = await sender.Send(query, cancellationToken);
 
-            return Results.Ok(response);
+            var response = result.Adapt<GetPagitationProductsResponse>();
 
+            return Results.Ok(response.ProductPagination);
         })
         .WithName("GetProducts")
-        .Produces<GetProductsResponse>(StatusCodes.Status200OK)
+        .Produces<GetPagitationProductsResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .WithSummary("Get Products")
         .WithDescription("Get all products");
