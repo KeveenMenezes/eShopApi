@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ### Get all products
-GET {{Catalog}}/products/1/35
+GET {{Catalog}}/products?pageIndex=1&pageSize=2
 Accept: application/json
 
 ### Get product by id
