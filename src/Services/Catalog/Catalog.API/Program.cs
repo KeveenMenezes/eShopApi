@@ -29,10 +29,12 @@ builder.Services
     })
     .UseLightweightSessions();
 
-if(builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
     builder.Services.InitializeMartenWith<CatagoInitialData>();
 }
+
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -41,5 +43,6 @@ app.UsePathBase("/api");
 app.UseCors("AllowAngularApp");
 app.MapCarter();
 app.UseExceptionHandler(options => { });
+app.UseHealthChecks("/health");
 
 await app.RunAsync();
