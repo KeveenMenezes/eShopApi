@@ -1,12 +1,19 @@
 namespace Catalog.API.Models;
 
-public record Pagination<T>(
-    int pageSize,
-    int totalItems
-)
+// Default constructor for Mapster
+public record Pagination<T>()
 {
-    // Default constructor for Mapster
-    public Pagination() : this(0, 0) { }
+    public Pagination(
+        int totalItems,
+        int pageSize) : this()
+    {
+        this.totalItems = totalItems;
+        this.pageSize = pageSize;
+    }
+
+    public int totalItems { get; init; }
+
+    public int pageSize { get; init; }
 
     public int totalPages { get => (int)Math.Ceiling(totalItems / (double)pageSize); }
 

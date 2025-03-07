@@ -4,9 +4,9 @@ public record UpdateProductCommand(
     Guid Id,
     string Name,
     string Description,
-    string ImageFile,
+    string ImageUrl,
     decimal Price,
-    List<string> Categories) 
+    List<string> Categories)
     : ICommand<UpdateProductResult>;
 
 public record UpdateProductResult(Guid Id);
@@ -43,7 +43,7 @@ internal class UpdateProductCommandHandler
         product.Update(
             command.Name,
             command.Description,
-            command.ImageFile,
+            command.ImageUrl,
             command.Price,
             command.Categories);
 

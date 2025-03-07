@@ -13,8 +13,8 @@ internal class GetProductsQueryHandler(IDocumentSession session)
     public async Task<GetProductsResult> Handle(GetProductsQuery request, CancellationToken cancellationToken)
     {
         var pagination = new Pagination<Product>(
-            request.PageSize,
-            await session.Query<Product>().CountAsync(cancellationToken)
+            await session.Query<Product>().CountAsync(cancellationToken),
+            request.PageSize
         )
         {
             pageIndex = request.PageIndex

@@ -5,7 +5,7 @@ public record UpdateProductRequest(
     Guid Id,
     string Name,
     string Description,
-    string ImageFile,
+    string ImageUrl,
     decimal Price,
     List<string> Categories);
 
