@@ -41,3 +41,9 @@ Content-Type: application/json
 
 ### Delete product
 DELETE {{Catalog}}/products/e1549a96-3bc8-43ea-88be-7c98da4aa189
+
+
+### HealthCheck
+GET {{Catalog}}/health
+Accept: application/json
+
